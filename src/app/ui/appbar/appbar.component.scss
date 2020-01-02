@@ -1,0 +1,20 @@
+.uk-navbar-container.uk-sticky.uk-sticky-fixed {
+  background-color: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08);
+  height: 60px;
+}
+
+.uk-navbar-item {
+  padding: 0 15px 20px 10px !important;
+}
+
+.navbar-nav {
+  padding: 15px 20px 0px 0px !important;
+}
+
+a,
+.uk-link {
+  color: #999 !important;
+  text-decoration: none;
+  cursor: pointer;
+}
