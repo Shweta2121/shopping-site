@@ -11,8 +11,10 @@ export class PageListingComponent implements OnInit {
   products: IProductModel[] = [];
   constructor(private productDB: ProductsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initProduct();
+  }
   async initProduct() {
-    // this.products = await this.productDB.list();
+    this.products = await this.productDB.list();
   }
 }

@@ -1,0 +1,50 @@
+#left-col {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 260px;
+  z-index: 1;
+}
+
+@media (min-width: 960px) {
+  .uk-section {
+    padding-top: 25px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+.addcart {
+  cursor: pointer !important;
+}
+
+img {
+  height: 200px;
+  width: auto;
+}
+
+span.price {
+  margin-right: 150px;
+}
+
+.addtocart {
+  border-top: #999 !important;
+}
+
+.bar-wrap {
+  padding: 2rem;
+}
+
+#right-col {
+  margin-left: 260px;
+}
+
+.uk-light .uk-nav-default>li>a {
+  color: #999 !important;
+}
+
+.uk-light .uk-nav-default .uk-nav-header {
+  color: #999 !important;
+}

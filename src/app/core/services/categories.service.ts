@@ -9,14 +9,14 @@ export class CategoriesService extends DataService<ICategoryModel> {
   private categoriesDataDump: ICategoryModel[] = [
     {
       id: Date.now(),
-      name: "Mobile",
+      name: "Laptop",
       createdAt: new Date(),
       modifiedAt: new Date(),
       isActive: true
     },
     {
       id: Date.now(),
-      name: "Laptop",
+      name: "Mobile",
       createdAt: new Date(),
       modifiedAt: new Date(),
       isActive: true
@@ -29,7 +29,6 @@ export class CategoriesService extends DataService<ICategoryModel> {
       isActive: true
     }
   ];
-
   constructor() {
     super();
     for (const category of this.categoriesDataDump) {

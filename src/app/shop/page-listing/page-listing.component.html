@@ -3,24 +3,20 @@
 <div id="right-col" class="uk-section uk-section-default">
   <div class="uk-container">
     <div class="uk-margin uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
-      <span *ngFor="let pro of Products">
+      <span *ngFor="let product of products">
         <!-- | filterByBrand: selectedBrand -->
         <div>
           <div class="uk-animation-toggle" tabindex="0">
             <div class="uk-margin uk-card uk-card-default uk-card-hover uk-animation-shake">
               <div class="uk-card-media-top">
-                <img src="{{ pro.productImageUrl }}" alt="{{ pro.productalt }}" />
+                <img src="{{ product.images }}" />
               </div>
               <div class="uk-card-body">
-                <!-- <div class="uk-card-badge uk-label">Badge</div> -->
-                <h3 for="productSeller" class="uk-card-title">
-                  {{ pro.productBrand }}
-                </h3>
-                <h3 class="uk-card-title">{{ pro.productName }}</h3>
-                <p>{{ pro.productDescription }}</p>
+                <h3 class="uk-card-title">{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
                 <p class="addtocart">
-                  <span class="price">&#8377;{{ pro.productPrice }}</span>
-                  <span (click)="addToCart(pro.productId)" class="addcart" uk-icon="cart"></span>
+                  <span class="price">&#8377;{{ product.price }}</span>
+                  <span class="addcart" uk-icon="cart"></span>
                 </p>
               </div>
             </div>
