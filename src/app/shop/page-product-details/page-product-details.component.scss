@@ -1,0 +1,53 @@
+.uk-card-default {
+  background: #fff;
+  color: #666;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+h2,
+.pname,
+.pdesc,
+.pcat {
+  text-align: left;
+}
+
+.pname {
+  border-top: 1px solid #DCDCDC;
+
+}
+
+img {
+  height: 500px !important;
+  width: auto !important;
+}
+
+.ppri,
+.pprod {
+  padding: 20px 0px 10px 10px;
+  color: #000000;
+  display: flex;
+  border: 1px solid #DCDCDC;
+  width: 60%;
+}
+
+button.uk-button.uk-button-danger {
+  margin: 30px 645px 0px 0px;
+}
+
+.pcat {
+  padding: 20px 0px 20px 0px;
+  color: #000000;
+  display: flex;
+}
+
+.content {
+  padding: 0px 0px 0px 31px;
+}
+
+.pname,
+.pdesc {
+  border-bottom: 1px solid #DCDCDC;
+  padding: 20px 0px 10px 0px;
+  color: #000000;
+  display: flex;
+}

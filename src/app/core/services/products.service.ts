@@ -8,7 +8,7 @@ import { DataService } from "../classes/data-service";
 export class ProductsService extends DataService<IProductModel> {
   private productDataDump: IProductModel[] = [
     {
-      id: Date.now(),
+      id: 1,
       name: "Google Pixel Slate",
       images: "../../../assets/image/tablet/google/81Jn8zj5JTL._SL1500_.jpg",
       description: "Google Pixel Slate 12.3-Inch 2 in 1 Tablet",
@@ -20,7 +20,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 2,
       name: "Apple MacBook Pro ",
       images: "../../../assets/image/laptop/Apple/61hG5bKTiQL._SL1500_.jpg",
       description: "Apple MacBook Pro (15-inch Retina, Touch Bar, - Silver",
@@ -32,7 +32,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 3,
       name: "Apple iPhone 11 Pro",
       images: "../../../assets/image/mobile/Apple/611JavcU70L._SL1024_.jpg",
       description: "Apple iPhone 11 Pro Max (512GB) - Gold",
@@ -44,7 +44,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 4,
       name: "OPPO Find X",
       images: "../../../assets/image/mobile/Oppo/51tIjUZMEaL._SL1246_.jpg",
       description: "OPPO Find X (Glacier Blue, 8GB RAM, 256GB Storage)",
@@ -56,7 +56,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 5,
       name: "Lenovo Tab4 10 Tablet",
       images: "../../../assets/image/tablet/lenovo/51PVcR9nQPL._SL1000_.jpg",
       description: "Lenovo Tab4 10 Tablet (10.1 inch,16GB, Non Calling) ",
@@ -68,7 +68,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 6,
       name: "Redmi Note 7 Pro",
       images: "../../../assets/image/mobile/Redmi/81b4tnJ8ITL._SL1500_.jpg",
       description: "Redmi Note 7 Pro (Neptune Blue, 128GB, 8GB RAM)",
@@ -80,7 +80,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 7,
       name: "Samsung Galaxy M30s",
       images: "../../../assets/image/mobile/Samsung/71EvOK7BhuL._SL1500_.jpg",
       description: "Samsung Galaxy M30s Blue, 4GB RAM, Super AMOLED Display",
@@ -92,7 +92,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 8,
       name: "HP EliteBook 1040",
       images: "../../../assets/image/laptop/hp/81tEiJj2M+L._SL1500_.jpg",
       description: "HP EliteBook 1040 G4 Notebook PC 2019 14-inch Laptop",
@@ -104,7 +104,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 9,
       name: "Sony Xperia Z5 Dual",
       images: "../../../assets/image/mobile/Sony/61jkcuw1wtL._SL1202_.jpg",
       description: "Sony Xperia Z5 Dual (Gold) 23MP primary camera ",
@@ -116,7 +116,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 10,
       name: "Samsung Galaxy Tab",
       images: "../../../assets/image/tablet/samsung/71983JB6wpL._SL1500_.jpg",
       description:
@@ -129,7 +129,7 @@ export class ProductsService extends DataService<IProductModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 11,
       name: "Micromax Canvas tab",
       images: "../../../assets/image/tablet/micromax/41LRmDjnQiL.jpg",
       description: "Micromax Canvas tab P480 Tablet, Grey",
@@ -142,7 +142,7 @@ export class ProductsService extends DataService<IProductModel> {
     },
 
     {
-      id: Date.now(),
+      id: 12,
       name: "Lenovo Yoga S940 ",
       images: "../../../assets/image/laptop/lenovo/61NV06Gd-hL._SL1500_.jpg",
       description: "Lenovo Yoga S940 8th Gen Intel Core i7 14.0-inch FHD",

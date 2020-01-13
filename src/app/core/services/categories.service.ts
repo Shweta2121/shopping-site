@@ -8,21 +8,21 @@ import { ICategoryModel } from "../interfaces/common-model";
 export class CategoriesService extends DataService<ICategoryModel> {
   private categoriesDataDump: ICategoryModel[] = [
     {
-      id: Date.now(),
+      id: 1,
       name: "Laptop",
       createdAt: new Date(),
       modifiedAt: new Date(),
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 2,
       name: "Mobile",
       createdAt: new Date(),
       modifiedAt: new Date(),
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 3,
       name: "Tablet",
       createdAt: new Date(),
       modifiedAt: new Date(),

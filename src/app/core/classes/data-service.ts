@@ -36,9 +36,9 @@ export class DataService<T> {
   }
 
   async get(id: number) {
-    const datasetId = this.table.findIndex(v => (v as IDataModel).id === id);
-    const pl = this.table[datasetId];
-    return pl;
+    return this.table.find(v => (v as IDataModel).id === id);
+    // const pl = this.table[datasetId];
+    // return pl;
   }
 
   async list(query?: (value: T) => boolean) {

@@ -8,7 +8,7 @@ import { DataService } from "../classes/data-service";
 export class BrandsService extends DataService<IBrandModel> {
   private brandsDataDump: IBrandModel[] = [
     {
-      id: Date.now(),
+      id: 1,
       name: "Google",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -16,7 +16,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 2,
       name: "Apple",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -24,7 +24,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 3,
       name: "lenovo",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -33,7 +33,7 @@ export class BrandsService extends DataService<IBrandModel> {
     },
 
     {
-      id: Date.now(),
+      id: 4,
       name: "Oppo",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -41,7 +41,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 5,
       name: "hp",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -49,7 +49,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 6,
       name: "Redmi",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -57,7 +57,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 7,
       name: "Samsung",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -65,7 +65,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 8,
       name: "Sony",
       logoUrl: "abc",
       createdAt: new Date(),
@@ -73,7 +73,7 @@ export class BrandsService extends DataService<IBrandModel> {
       isActive: true
     },
     {
-      id: Date.now(),
+      id: 9,
       name: "Micromax",
       logoUrl: "abc",
       createdAt: new Date(),
