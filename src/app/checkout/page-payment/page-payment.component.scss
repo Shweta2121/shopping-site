@@ -1,0 +1,92 @@
+/* Global settings */
+$color-border: #eee;
+$color-label: #aaa;
+$font-default: "HelveticaNeue-Light",
+"Helvetica Neue Light",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$font-bold: "HelveticaNeue-Medium",
+"Helvetica Neue Medium";
+
+.liner {
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  width: 78%;
+  margin: 63px auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.text-center {
+  padding: 50px 0px 0px 0px;
+  font-size: 34px;
+  text-align: center;
+}
+
+ul#myTab {
+  margin-top: -25px;
+}
+
+a {
+  background-color: transparent;
+  margin-left: 48%;
+  display: block;
+  position: relative;
+}
+
+span.round-tabs.one:hover {
+  color: #ffffff;
+  background-color: #22c222;
+}
+
+img {
+  width: 100px;
+}
+
+.uk-container {
+  margin-top: 100px;
+}
+
+.sameline {
+  margin-bottom: -71px;
+  padding: .75rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+
+span.round-tabs {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #22c222;
+  top: 25px;
+  line-height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background: #fff;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.product-details {
+  float: none;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.product-details {
+  .product-title {
+    margin-right: 20px;
+    font-family: $font-bold;
+  }
+
+  .product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+  }
+}
