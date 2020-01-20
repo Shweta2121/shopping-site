@@ -10,17 +10,19 @@ sans-serif;
 $font-bold: "HelveticaNeue-Medium",
 "Helvetica Neue Medium";
 
-label {
-  display: inline-block;
-  margin-bottom: .5rem;
-}
-
 .uk-container {
-  margin-bottom: 20px;
-  margin-top: 150px;
+  margin-top: 80px;
   padding-bottom: 10px !important;
 }
 
+.next {
+  padding: 40px;
+  text-align: end;
+}
+
+button.uk-button.uk-button-danger {
+  width: 125px;
+}
 
 .liner {
   height: 2px;
@@ -50,8 +52,33 @@ a {
   position: relative;
 }
 
+img {
+  width: 100px;
+}
+
+.itotal {
+  text-align: left;
+}
+
+.gtotal {
+  margin-left: 85%;
+}
+
 i.uk-icon {
   color: #ffffff !important;
+}
+
+.sameline {
+  margin-bottom: -71px;
+  padding: .75rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.ctotal {
+  display: flex;
+  padding: .75rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+  margin: 125px 0px 0px 0px;
 }
 
 span.round-tabs {
@@ -68,4 +95,22 @@ span.round-tabs {
   left: 0;
   text-align: center;
   font-size: 25px;
+}
+
+.product-details {
+  float: none;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.product-details {
+  .product-title {
+    margin-right: 20px;
+    font-family: $font-bold;
+  }
+
+  .product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+  }
 }

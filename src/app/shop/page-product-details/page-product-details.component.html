@@ -1,7 +1,10 @@
 <div class=" uk-margin uk-grid-small uk-text-center uk-grid" uk-grid>
   <div class="uk-width-1-3@m">
     <div class="uk-card uk-card-body">
-      <img src="{{ productdetails.images }}" />
+      <img src="{{ productdetails.images }}" alt="image" />
+    </div>
+    <div>
+      <button (click)="addToCart(productdetails)" class="uk-button uk-button-danger">Add to Cart</button>
     </div>
   </div>
   <div class="uk-width-expand@m">
@@ -17,7 +20,7 @@
       </div>
       <div class="pcat">
         Product Brand
-        <p class=content> {{ productdetails.brandId }}</p>
+        <p class=content> {{ productdetails.brandname }}</p>
       </div>
       <div class="ppri">
         Product Price
@@ -25,9 +28,7 @@
       </div>
       <div class=" pprod">
         Product Category
-        <p class="content cat"> {{ productdetails.categoryId }}</p>
-      </div>
-      <div><button class="uk-button uk-button-danger">Add to Cart</button>
+        <p class="content cat"> {{ productdetails.categoryname }}</p>
       </div>
     </div>
   </div>

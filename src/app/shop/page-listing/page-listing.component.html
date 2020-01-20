@@ -3,12 +3,11 @@
 <div id="right-col" class="uk-section uk-section-default">
   <div class="uk-container">
     <div class="uk-margin uk-grid-small uk-child-width-1-3@s uk-text-center" uk-grid>
-      <span [title]="product.name + ' product details'" [routerLink]="['/products', product.id]"
-        *ngFor="let product of products">
+      <span [title]="product.name + ' product details'" *ngFor="let product of products">
         <div>
-          <div class="uk-animation-toggle" tabindex="0">
+          <div tabindex="0">
             <div class="uk-margin uk-card uk-card-default uk-card-hover uk-animation-shake">
-              <div class="uk-card-media-top">
+              <div class="uk-card-media-top" [routerLink]="['/products', product.id]">
                 <img src="{{ product.images }}" />
               </div>
               <div class="uk-card-body">
@@ -16,7 +15,7 @@
                 <p>{{ product.description }}</p>
                 <p class="addtocart">
                   <span class="price">&#8377;{{ product.price }}</span>
-                  <span class="addcart" uk-icon="cart"></span>
+                  <span (click)="addToCart(product)" class="addcart" uk-icon="cart"></span>
                 </p>
               </div>
             </div>

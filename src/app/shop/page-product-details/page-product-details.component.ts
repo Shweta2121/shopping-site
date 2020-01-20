@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { IProductModel } from "src/app/core/interfaces/common-model";
 import { ProductsService } from "src/app/core/services/products.service";
 import { ActivatedRoute } from "@angular/router";
-import { IDataModel } from "src/app/core/interfaces/data-model";
+import { CartService } from "../../core/services/cart.service";
 
 @Component({
   selector: "app-page-product-details",
@@ -10,22 +10,20 @@ import { IDataModel } from "src/app/core/interfaces/data-model";
   styleUrls: ["./page-product-details.component.scss"]
 })
 export class PageProductDetailsComponent implements OnInit {
+  products = [];
   private routeParamsub;
   productdetails: IProductModel;
   constructor(
     private productDB: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartserve: CartService
   ) {}
 
   ngOnInit() {
     this.initProductdetails();
   }
-  async initProductdetails() {
+  initProductdetails() {
     this.routeParamsub = this.route.params.subscribe(async params => {
-      // console.log(params);
-      // console.log(params.productId);
-      // const id = +params.productId;
-      // const id = +params["productId"];
       const id: number = parseInt(params.productId);
       this.productdetails = await this.productDB.get(id);
     });
@@ -34,5 +32,17 @@ export class PageProductDetailsComponent implements OnInit {
     if (this.routeParamsub != null) {
       this.routeParamsub.unsubscribe();
     }
+  }
+  async addToCart(productdetails: IProductModel) {
+    this.cartserve.addItem({
+      id: Date.now(),
+      productId: productdetails.id,
+      image: productdetails.images,
+      name: productdetails.name,
+      description: productdetails.description,
+      price: productdetails.price,
+      qty: 1,
+      amount: productdetails.price
+    });
   }
 }

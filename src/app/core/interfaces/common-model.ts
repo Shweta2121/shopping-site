@@ -31,23 +31,29 @@ export interface ICartModel extends IDataModel {
   address?: IAddressModel;
   items?: ICartItemModel[];
   subTotal: number;
-  total: number;
   gstAmount: number;
+  shipping: number;
+  grandtotal: number;
 }
 
 export interface ICartItemModel {
+  id: number;
   productId: number;
   qty: number;
   price: number;
   amount: number;
+  image: string;
+  name: string;
+  description: string;
 }
 
 export interface IAddressModel {
-  street1: string;
-  street2: string;
-  city: string;
-  state: string;
+  Firstname: string;
+  Lastname: string;
+  Address: string;
+  Address2?: string;
   country: string;
+  state: string;
   pincode: string;
 }
 
@@ -55,9 +61,11 @@ export interface ICheckoutModel extends ICartModel {
   paymentMode: "card" | "cash" | "upi";
 }
 
-export interface IUserModel extends IDataModel {
-  name: string;
-  address?: IAddressModel;
-  email?: string;
-  password?: string;
+export interface IUserModel {
+  id: number;
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  token: string;
 }

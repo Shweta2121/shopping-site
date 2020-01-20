@@ -1,0 +1,38 @@
+<div>
+  <h3 class="text-center">Checking Out Products
+  </h3>
+  <div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+    </ul>
+    <div class="liner"></div>
+  </div>
+  <a title="Product Summary">
+    <span class="round-tabs one">
+      <i uk-icon="cart" aria-hidden="true"></i>
+    </span>
+  </a>
+  <div class="uk-container">
+    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top sameline"
+      *ngFor="let cart of cart.items" uk-grid>
+      <div>
+        <div> <img src="{{ cart.image }}" /></div>
+      </div>
+      <div>
+        <div> {{cart.name }}
+          {{ cart.description }}
+        </div>
+      </div>
+      <div>
+        <div>&#8377;{{ cart.amount }}</div>
+      </div>
+    </div>
+    <div class="ctotal">
+      <div class="itotal">Total (INR)
+      </div>
+      <div class="gtotal">&#8377;{{ cart.grandtotal }}</div>
+    </div>
+    <div class="next">
+      <button routerLink="/shipping" class="uk-button uk-button-danger">Next</button>
+    </div>
+  </div>
+</div>

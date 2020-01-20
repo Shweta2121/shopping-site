@@ -1,1 +1,67 @@
-<p>page-payment works!</p>
+<div>
+  <h3 class="text-center">Checking Out Products
+  </h3>
+  <div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+    </ul>
+    <div class="liner"></div>
+  </div>
+  <a title="Product Summary">
+    <span class="round-tabs one">
+      <i uk-icon="cart" aria-hidden="true"></i>
+    </span>
+  </a>
+  <div class="uk-container">
+    <hr>
+    <h3>Shipping Address
+    </h3>
+    <form class="uk-grid-small" uk-grid>
+      <div class="uk-width-1-2@s">
+        <label>First name </label>
+        <input class="uk-input" type="text">
+      </div>
+      <div class="uk-width-1-2@s">
+        <label> Last name </label>
+        <input class="uk-input" type="text">
+      </div>
+      <div class="uk-width-1-1">
+        <label>Email (Optional)</label>
+        <input class="uk-input" type="text">
+      </div>
+      <div class="uk-width-1-1">
+        <label> Address</label>
+        <input class="uk-input" type="text">
+      </div>
+      <div class="uk-width-1-1">
+        <label>Address 2 (Optional)</label>
+        <input class="uk-input" type="text">
+      </div>
+      <div class="uk-width-1-3@s">
+        <label>Country</label>
+        <select class="uk-input">
+          <option value="">Select Country</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="vw">VW</option>
+          <option value="audi" selected>Audi</option>
+        </select>
+      </div>
+      <div class="uk-width-1-3@s">
+        <label>State</label>
+        <select class="uk-input">
+          <option value="">Select State</option>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="vw">VW</option>
+          <option value="audi" selected>Audi</option>
+        </select>
+      </div>
+      <div class="uk-width-1-3@s">
+        <label>Zip</label>
+        <input class="uk-input" type="text">
+      </div>
+    </form>
+    <hr>
+    <button class="uk-button uk-button-large uk-button-danger uk-width-1-1 uk-margin-small-bottom">Continue to
+      checkout</button>
+  </div>

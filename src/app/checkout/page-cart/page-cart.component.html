@@ -1,1 +1,83 @@
-<p>page-cart works!</p>
+<div *ngIf="cart.items.length > 0">
+  <div>
+    <div class="shopping-cart">
+      <div class="column-labels">
+        <label class="product-image">Image</label>
+        <label class="product-details">Product</label>
+        <label class="product-price">Price</label>
+        <label class="product-quantity">Quantity</label>
+        <label class="product-removal">Remove</label>
+        <label class="product-line-price">Total</label>
+      </div>
+      <div *ngFor="let cart of cart.items">
+        <div class="product">
+          <div class="product-image">
+            <img src="{{ cart.image }}" />
+          </div>
+          <div class="product-details">
+            <div class="product-title">
+              {{ cart.name }}
+            </div>
+            <p class="product-description">
+              {{ cart.description }}
+            </p>
+          </div>
+          <div class="product-price">
+            {{ cart.price }}
+          </div>
+          <div class="product-quantity">
+            <p>
+              <span class="uk-margin-small-right" (click)="decrement(cart)" uk-icon="minus-circle"></span>
+              {{ cart.qty }}
+              <span class="uk-margin-small-left" (click)="increment(cart)" uk-icon="plus-circle">
+              </span>
+            </p>
+          </div>
+          <div class="product-removal">
+            <button (click)="delete(cart.id)" class="remove-product">
+              Remove
+            </button>
+          </div>
+          <div class="product-line-price">&#8377;{{ cart.amount }}</div>
+        </div>
+      </div>
+      <div class="totals">
+        <div class="totals-item">
+          <label>Subtotal</label>
+          <div class="totals-value" id="cart-subtotal">
+            &#8377;{{ cart.subTotal }}
+          </div>
+        </div>
+        <div class="totals-item">
+          <label>Tax (5%)</label>
+          <div class="totals-value" id="cart-tax">&#8377;{{ cart.gstAmount }}</div>
+        </div>
+        <div class="totals-item">
+          <label>Shipping</label>
+          <div class="totals-value" id="cart-shipping">
+            &#8377;{{ cart.shipping }}
+          </div>
+        </div>
+        <div class="totals-item totals-item-total">
+          <label>Grand Total</label>
+          <div class="totals-value" id="cart-total">
+            &#8377;{{ cart.grandtotal }}
+          </div>
+        </div>
+      </div>
+      <button routerLink="/" class="checkout uk-button uk-button-default">
+        Continue Shipping
+      </button>
+      <button (click)="auth(currentUser)" class="checkout uk-button uk-button-default">
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="cart.items.length === 0">
+  <div style="text-align: center;">
+    <h1>Oops!</h1>
+    <h2>Products Found in Cart</h2>
+    <p>Please, Add Products to cart-shipping</p>
+  </div>
+</div>

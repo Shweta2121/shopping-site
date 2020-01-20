@@ -50,19 +50,16 @@ export class FilterBarComponent implements OnInit {
     });
     this.formBrandChangeSub = this.filterForm.controls.brandId.valueChanges.subscribe(
       res => {
-        console.log(res);
         this.brand = res;
         this.FilterServe.filterInit(this.brand, this.category);
       }
     );
-    this.formCategoryChangeSub = this.filterForm.controls.categoryId.valueChanges
-      .subscribe
-      // res => {
-      //   console.log(res);
-      //   this.category = res;
-      //   this.FilterServe.filterInit(this.category, this.brand);
-      // }
-      ();
+    this.formCategoryChangeSub = this.filterForm.controls.categoryId.valueChanges.subscribe(
+      res => {
+        this.category = res;
+        this.FilterServe.filterInit(this.brand, this.category);
+      }
+    );
     this.formSortByChangeSub = this.filterForm.controls.sortBy.valueChanges.subscribe(
       res => {}
     );

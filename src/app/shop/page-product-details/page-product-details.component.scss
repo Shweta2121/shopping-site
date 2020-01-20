@@ -17,24 +17,21 @@ h2,
 }
 
 img {
-  height: 500px !important;
+  height: 350px !important;
   width: auto !important;
 }
 
+.uk-button-danger {
+  background-color: #f0506e;
+  color: #fff;
+  margin: 0px 15px 0px 0px !important;
+  padding: 6px 25px 6px 25px !important;
+  border: 1px solid transparent;
+}
+
+.pcat,
 .ppri,
 .pprod {
-  padding: 20px 0px 10px 10px;
-  color: #000000;
-  display: flex;
-  border: 1px solid #DCDCDC;
-  width: 60%;
-}
-
-button.uk-button.uk-button-danger {
-  margin: 30px 645px 0px 0px;
-}
-
-.pcat {
   padding: 20px 0px 20px 0px;
   color: #000000;
   display: flex;
@@ -45,7 +42,9 @@ button.uk-button.uk-button-danger {
 }
 
 .pname,
-.pdesc {
+.pdesc,
+.ppri,
+.pcat {
   border-bottom: 1px solid #DCDCDC;
   padding: 20px 0px 10px 0px;
   color: #000000;

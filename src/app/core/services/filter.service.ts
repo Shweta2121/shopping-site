@@ -10,15 +10,9 @@ export class FilterService {
   constructor(private productserve: ProductsService) {}
 
   async filterInit(brand?: any, category?: any) {
-    console.log(brand);
-    // console.log(category);
-    // this.products = await this.productserve.list();
-    // console.log(this.products.findIndex(x => x.brandId === brand));
-    this.products = (await this.productserve.list()).find(x => x.id == brand);
+    this.products = await this.productserve.list(x => x.brandId == brand);
     console.log(this.products);
-    // this.products = (await this.productserve.list()).find(
-    //   x => x.id == category
-    // );
-    // console.log(this.products);
+    this.products = await this.productserve.list(x => x.categoryId == category);
+    console.log(this.products);
   }
 }
