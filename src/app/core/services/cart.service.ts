@@ -21,7 +21,7 @@ export class CartService {
     ICartModel
   >(this._cart);
   private cartObs: Observable<ICartModel> = this.cartSubject.asObservable();
-  constructor(private productDB: ProductsService) {}
+  constructor(private productDB: ProductsService) { }
 
   get cart() {
     return this.cartObs;

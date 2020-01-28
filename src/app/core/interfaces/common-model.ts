@@ -12,11 +12,16 @@ export interface IBrandModel extends IDataModel {
 export interface IProductModel extends IDataModel {
   name: string;
   images: string;
-  // images: string[];
   description: string;
   price: number;
   categoryId: number;
   brandId: number;
+}
+
+export interface IFilterModels extends IDataModel {
+  brand: number,
+  category: number,
+  sorting: number,
 }
 
 export interface IInventoryModel extends IDataModel {

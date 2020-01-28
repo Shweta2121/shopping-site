@@ -4,10 +4,11 @@ import { CategoriesService } from "src/app/core/services/categories.service";
 import { FilterService } from "src/app/core/services/filter.service";
 import {
   ICategoryModel,
-  IBrandModel
+  IBrandModel, IProductModel
 } from "src/app/core/interfaces/common-model";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Subscription } from "rxjs";
+import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: "app-filter-bar",
@@ -15,20 +16,20 @@ import { Subscription } from "rxjs";
   styleUrls: ["./filter-bar.component.scss"]
 })
 export class FilterBarComponent implements OnInit {
+  products = [];
   categories: ICategoryModel[] = [];
   brands: IBrandModel[] = [];
   filterForm: FormGroup;
   private formCategoryChangeSub: Subscription;
   private formBrandChangeSub: Subscription;
   private formSortByChangeSub: Subscription;
-  brand = "All";
-  category = "All";
   constructor(
+    private productDB: ProductsService,
     private brandDB: BrandsService,
     private categoryDB: CategoriesService,
     private fb: FormBuilder,
     private FilterServe: FilterService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.initCategory();
@@ -44,24 +45,36 @@ export class FilterBarComponent implements OnInit {
   }
   initForm() {
     this.filterForm = this.fb.group({
-      brandId: [""],
-      categoryId: [""],
-      sortBy: [""]
+      brandId: [null],
+      categoryId: [null],
+      sortBy: [null]
     });
     this.formBrandChangeSub = this.filterForm.controls.brandId.valueChanges.subscribe(
       res => {
-        this.brand = res;
-        this.FilterServe.filterInit(this.brand, this.category);
+        let a = null;
+        if (res !== "null") {
+          a = parseInt(res);
+        }
+        this.FilterServe.filterBrand(a);
       }
     );
     this.formCategoryChangeSub = this.filterForm.controls.categoryId.valueChanges.subscribe(
       res => {
-        this.category = res;
-        this.FilterServe.filterInit(this.brand, this.category);
+        let a = null;
+        if (res !== "null") {
+          a = parseInt(res);
+        }
+        this.FilterServe.filterCategory(a);
       }
     );
     this.formSortByChangeSub = this.filterForm.controls.sortBy.valueChanges.subscribe(
-      res => {}
+      res => {
+        let a = null;
+        if (res !== "null") {
+          a = parseInt(res);
+        }
+        this.FilterServe.filterSort(a);
+      }
     );
   }
 }

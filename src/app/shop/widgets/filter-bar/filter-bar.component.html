@@ -7,20 +7,19 @@
         </div>
         <div>
           <select formControlName="categoryId">
-            <option value="">All Categories</option>
-            <option *ngFor="let category of categories" [value]="category.id" [innerHtml]="category.name">
+            <option value="null">All Categories</option>
+            <option *ngFor="let category of categories " [value]="category.id" [innerHtml]="category.name">
             </option>
           </select>
         </div>
       </li>
-
       <li>
         <div class="uk-block">
           <span>By Brand</span>
         </div>
         <div>
           <select formControlName="brandId">
-            <option value="">All Brands</option>
+            <option value="null">All Brands</option>
             <option *ngFor="let brand of brands" [value]="brand.id" [innerHtml]="brand.name"></option>
           </select>
         </div>
@@ -30,10 +29,10 @@
           <span>Sort by</span>
         </div>
         <div>
-          <select>
-            <option value="">By relevance</option>
-            <option value="low">By price low to high</option>
-            <option value="high">By price high to low</option>
+          <select formControlName="sortBy">
+            <option value="null">By relevance</option>
+            <option value="1">By price low to high</option>
+            <option value="2">By price high to low</option>
           </select>
         </div>
       </li>

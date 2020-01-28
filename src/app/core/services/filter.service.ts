@@ -1,18 +1,46 @@
 import { Injectable } from "@angular/core";
 import { ProductsService } from "../services/products.service";
-import { IProductModel } from "src/app/core/interfaces/common-model";
+import { IFilterModels } from "src/app/core/interfaces/common-model";
+import { Observable, BehaviorSubject } from "rxjs";
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
 })
 export class FilterService {
-  products: IProductModel[] = [];
-  constructor(private productserve: ProductsService) {}
+  private _filterProducts: IFilterModels = {
+    brand: null,
+    category: null,
+    sorting: null,
+  };
 
-  async filterInit(brand?: any, category?: any) {
-    this.products = await this.productserve.list(x => x.brandId == brand);
-    console.log(this.products);
-    this.products = await this.productserve.list(x => x.categoryId == category);
-    console.log(this.products);
+  private behavioursubject$: BehaviorSubject<IFilterModels> = new BehaviorSubject<IFilterModels>(this._filterProducts);
+
+  private filterObs: Observable<IFilterModels> = this.behavioursubject$.asObservable();
+
+  constructor(private productserve: ProductsService) { }
+
+  get filter() {
+    return this.filterObs;
+  }
+
+  async filterBrand(brand: number) {
+    const currentFilter = await this.filter.pipe(take(1)).toPromise();
+    const currentItems = currentFilter.brand = brand;
+    this.behavioursubject$.next(currentFilter);
+    return currentFilter;
+  }
+
+  async filterCategory(category: number) {
+    const currentFilter = await this.filter.pipe(take(1)).toPromise();
+    const currentItems = currentFilter.category = category;
+    this.behavioursubject$.next(currentFilter);
+    return currentFilter;
+  }
+  async filterSort(sorting: number) {
+    const currentFilter = await this.filter.pipe(take(1)).toPromise();
+    const currentItems = currentFilter.sorting = sorting;
+    this.behavioursubject$.next(currentFilter);
+    return currentFilter;
   }
 }
