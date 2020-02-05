@@ -37,14 +37,15 @@ export class PageListingComponent implements OnInit, OnDestroy {
       this.filter = f;
       this.products = await this.productDB.list(x => (f.category == null || x.categoryId == f.category) && (f.brand == null || x.brandId == f.brand));
       if (f.sorting === 1) {
-        this.products = this.products.sort((low, high) => high.Price - low.Pric)
-        return this.products;
+        this.products = this.products.sort(function (a, b) {
+          return parseFloat(a.price) - parseFloat(b.price);
+        })
       }
-      else {
-        this.products = this.products.sort((low, high) => high.Price - low.Price)
-        return this.products;
+      if (f.sorting === 2) {
+        this.products = this.products.sort(function (a, b) {
+          return parseFloat(b.price) - parseFloat(a.price);
+        })
       }
-
     });
   }
   async addToCart(product: IProductModel) {

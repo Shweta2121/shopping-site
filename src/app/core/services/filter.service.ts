@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { ProductsService } from "../services/products.service";
 import { IFilterModels } from "src/app/core/interfaces/common-model";
 import { Observable, BehaviorSubject } from "rxjs";
 import { take } from 'rxjs/operators';
@@ -18,7 +17,7 @@ export class FilterService {
 
   private filterObs: Observable<IFilterModels> = this.behavioursubject$.asObservable();
 
-  constructor(private productserve: ProductsService) { }
+  constructor() { }
 
   get filter() {
     return this.filterObs;
@@ -32,6 +31,7 @@ export class FilterService {
   }
 
   async filterCategory(category: number) {
+    console.log(category)
     const currentFilter = await this.filter.pipe(take(1)).toPromise();
     const currentItems = currentFilter.category = category;
     this.behavioursubject$.next(currentFilter);

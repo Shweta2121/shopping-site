@@ -4,11 +4,10 @@ import { CategoriesService } from "src/app/core/services/categories.service";
 import { FilterService } from "src/app/core/services/filter.service";
 import {
   ICategoryModel,
-  IBrandModel, IProductModel
+  IBrandModel,
 } from "src/app/core/interfaces/common-model";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Subscription } from "rxjs";
-import { ProductsService } from 'src/app/core/services/products.service';
 
 @Component({
   selector: "app-filter-bar",
@@ -16,7 +15,6 @@ import { ProductsService } from 'src/app/core/services/products.service';
   styleUrls: ["./filter-bar.component.scss"]
 })
 export class FilterBarComponent implements OnInit {
-  products = [];
   categories: ICategoryModel[] = [];
   brands: IBrandModel[] = [];
   filterForm: FormGroup;
@@ -24,7 +22,6 @@ export class FilterBarComponent implements OnInit {
   private formBrandChangeSub: Subscription;
   private formSortByChangeSub: Subscription;
   constructor(
-    private productDB: ProductsService,
     private brandDB: BrandsService,
     private categoryDB: CategoriesService,
     private fb: FormBuilder,
@@ -38,6 +35,7 @@ export class FilterBarComponent implements OnInit {
   }
 
   async initCategory() {
+    console.log(this.categoryDB.list)
     this.categories = await this.categoryDB.list();
   }
   async initBrand() {
